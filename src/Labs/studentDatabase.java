@@ -13,16 +13,21 @@ class Student{
 	//properties
 	private static String ID = "1000";
 	private String phone, city, state;
+	private String emailID;
 	
 	//constructors
 	public Student(String firstName, String lastName, String SSN) {
+		setEmail(firstName, lastName);
 		
-		String emailID = lastName + firstName + "@tcnj.edu";
 		ID = ID + Integer.toString((int) (Math.random() * (9000 - 1000)) + 1000) + SSN.substring(5);
+		
 		System.out.println("ID: " + ID);
 	}
 	
 	//methods
+	private void setEmail(String firstName, String lastName) {
+		emailID = lastName + firstName + "@tcnj.edu";
+	}
 	public void enroll() {}
 	public void pay() {}
 	public void checkBalance() {}
